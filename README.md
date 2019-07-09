@@ -5,8 +5,7 @@ It just demontrate how vueJs works with vuex
 
 I wanted to test cypress so there are cypress tests implemented inside of this project
 
-[logo]: ./docs/img/todo-app.png "Todo app appearance"
-
+![Todo app appearance](/docs/img/todo-app.png)
 ## Project setup
 
 If you want to use this repo as a playground, 
