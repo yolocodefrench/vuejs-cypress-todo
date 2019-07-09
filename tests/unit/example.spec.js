@@ -1,13 +1,21 @@
 import { expect } from 'chai'
+import { createLocalVue } from '@vue/test-utils';
 import { shallowMount } from '@vue/test-utils'
-import HelloWorld from '@/components/HelloWorld.vue'
+import Unicon from 'vue-unicons';
+import { uniConstructor, uniTimes } from 'vue-unicons/src/icons';
+import Todo from '@/components/Todo.vue'
 
-describe('HelloWorld.vue', () => {
+const localVue = createLocalVue();
+Unicon.add([uniConstructor, uniTimes])
+localVue.use(Unicon)
+
+describe('Todo.vue', () => {
   it('renders props.msg when passed', () => {
-    const msg = 'new message'
-    const wrapper = shallowMount(HelloWorld, {
-      propsData: { msg }
+    const todo = 'Test'
+    const wrapper = shallowMount(Todo, {
+      localVue,
+      propsData: { todo }
     })
-    expect(wrapper.text()).to.include(msg)
+    expect(wrapper.text()).to.include(todo)
   })
 })
